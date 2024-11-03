@@ -75,6 +75,7 @@ class DatabaseHandler:
             self.cursor.execute("""
                 SELECT full_name, birth_date, gender FROM employees
                 WHERE gender = 'Male' AND full_name LIKE 'F%'
+                ORDER BY full_name
             """)
             return self.cursor.fetchall()
         except sqlite3.Error as e:
